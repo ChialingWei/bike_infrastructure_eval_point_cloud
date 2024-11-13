@@ -68,17 +68,6 @@ for s in file_lst:
         d[key] = [s]
 res = list(d.values())
 
-
-# # check if the amount of vertex is equal between ref & nor
-# len_set = set()
-# for ch in tqdm.tqdm(res):
-#     ref_start = vertex_amount(f"{ori_path}/{ch[0]}")
-#     nor_start = vertex_amount(f"{ori_path}/{ch[2]}")
-#     file_name = f"{ch[0].split('_')[0]}_{ch[0].split('_')[1]}_{ch[0].split('_')[3]}"
-#     if ref_start != nor_start:
-#         len_set.add(file_name)
-# print(len_set)
-
 prob_set = set()
 for ch in tqdm.tqdm(res):
     ref_start = find_start_idx(f"{ori_path}/{ch[0]}")
@@ -104,27 +93,6 @@ for ch in tqdm.tqdm(res):
     f2.close()
 print(prob_set)
 
-# nor_ply = '21_2/21_2_nor_22.ply'
-# nor_start = find_start_idx(nor_ply)
-# ref_ply = '21_2/21_2_grey_22.ply'
-# ref_start = find_start_idx(ref_ply)
-
-# nora = rgb_array(nor_ply, nor_start, 1)
-# refa = rgb_array(ref_ply, ref_start, 1) 
-
-# nor_dic = {}
-# for idx, v in enumerate(nora):
-#     nor_dic[idx] = v
-# ref_dic = {}
-# for idx, v in enumerate(refa):
-#     ref_dic[idx] = v
-
-# ref_lst = []
-# for i in nor_dic:
-#     diff = abs(nor_dic[i] - ref_dic[i])
-#     if diff > 1:
-#         print(i)
-#         break
 
 
 
